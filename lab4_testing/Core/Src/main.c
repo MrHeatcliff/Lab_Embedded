@@ -19,7 +19,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "scheduler.h"
+#include "button.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -72,6 +73,12 @@ void led4test(){
 void ledOneShottest(){
 	HAL_GPIO_TogglePin(GPIOA, led5_Pin);
 }
+//void buttonTest(){
+//	buttonRead();
+//	if(buttonPressed(0)||buttonHold(0)){
+//		HAL_GPIO_TogglePin(GPIOA, led6_Pin);
+//	}
+//}
 /* USER CODE END 0 */
 
 /**
@@ -110,11 +117,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   SCH_Init();
-SCH_Add_Task(led1test, 100, 50);
-SCH_Add_Task(led2test, 500, 100);
-SCH_Add_Task(led3test, 1000, 150);
-SCH_Add_Task(led4test, 1500, 200);
-SCH_Add_Task(ledOneShottest, 2000, 0);
+  // add task
+  /*The first to fourth led is for blinky led with diff freq
+   * the fifth led is one-shot task
+   * the sixth led is controlled by button*/
+SCH_Add_Task(led1test, 100, 50, 0);
+SCH_Add_Task(led2test, 500, 100, 0);
+SCH_Add_Task(led3test, 1000, 150, 0);
+SCH_Add_Task(led4test, 1500, 200, 0);
+SCH_Add_Task(ledOneShottest, 2000, 0, 0);
+//SCH_Add_Task(buttonTest, 0, 10, 0);
   while (1)
   {
 	  SCH_Dispatch_Tasks();
@@ -219,23 +231,26 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, led1_Pin|led2_Pin|led3_Pin|led4_Pin
-                          |led5_Pin, GPIO_PIN_RESET);
+                          |led5_Pin|led6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : led1_Pin led2_Pin led3_Pin led4_Pin
-                           led5_Pin */
+                           led5_Pin led6_Pin */
   GPIO_InitStruct.Pin = led1_Pin|led2_Pin|led3_Pin|led4_Pin
-                          |led5_Pin;
+                          |led5_Pin|led6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : button1_Pin */
+  GPIO_InitStruct.Pin = button1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(button1_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	SCH_Update();
-}
 /* USER CODE END 4 */
 
 /**

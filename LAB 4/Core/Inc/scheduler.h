@@ -12,16 +12,19 @@
 #include "stdint.h"
 
 
-#define SCH_MAX_TASKS 			40
 #define	NO_TASK_ID				0
 typedef struct{
 	void (*pTask)(void);
 	uint32_t 	Delay;
 	uint32_t 	Period;
 	uint8_t		RunMe;
-
+	struct sTask* 		nextTask;
 	uint32_t 	TaskID;
 } sTask;
+
+typedef struct{
+	sTask * top;
+} stack;
 
 
 void SCH_Init(void);

@@ -73,12 +73,12 @@ void led4test(){
 void ledOneShottest(){
 	HAL_GPIO_TogglePin(GPIOA, led5_Pin);
 }
-//void buttonTest(){
-//	buttonRead();
-//	if(buttonPressed(0)||buttonHold(0)){
-//		HAL_GPIO_TogglePin(GPIOA, led6_Pin);
-//	}
-//}
+void buttonTest(){
+	buttonRead();
+	if(buttonPressed(0)){
+		HAL_GPIO_TogglePin(GPIOA, led6_Pin);
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -117,6 +117,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   SCH_Init();
+  initButton();
   // add task
   /*The first to fourth led is for blinky led with diff freq
    * the fifth led is one-shot task
@@ -126,7 +127,7 @@ SCH_Add_Task(led2test, 500, 100, 0);
 SCH_Add_Task(led3test, 1000, 150, 0);
 SCH_Add_Task(led4test, 1500, 200, 0);
 SCH_Add_Task(ledOneShottest, 2000, 0, 0);
-//SCH_Add_Task(buttonTest, 0, 10, 0);
+SCH_Add_Task(buttonTest, 0, 2, 0);
   while (1)
   {
 	  SCH_Dispatch_Tasks();
@@ -245,7 +246,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : button1_Pin */
   GPIO_InitStruct.Pin = button1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(button1_GPIO_Port, &GPIO_InitStruct);
 
 }

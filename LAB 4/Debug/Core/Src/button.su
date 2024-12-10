@@ -1,4 +1,0 @@
-button.c:18:6:initButton	16	static
-button.c:29:6:buttonRead	16	static
-button.c:67:5:buttonPressed	16	static
-button.c:75:5:buttonHold	16	static

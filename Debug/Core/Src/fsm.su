@@ -1,0 +1,7 @@
+fsm.c:49:6:fsm_led	8	static
+fsm.c:92:6:increase_value	4	static
+fsm.c:117:6:button0_fsm	8	static
+fsm.c:162:6:button2_fsm	8	static
+fsm.c:192:6:button1_fsm	8	static
+fsm.c:233:6:traffic_light_fsm	8	static
+fsm.c:280:6:traffic_run	24	static

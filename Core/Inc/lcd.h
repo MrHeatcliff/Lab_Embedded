@@ -1,8 +1,8 @@
 /*
  * lcd.h
  *
- *  Created on: Nov 23, 2024
- *      Author: heathcliff
+ *  Created on: Sep 25, 2023
+ *      Author: HaHuyen
  */
 
 
@@ -79,7 +79,7 @@ typedef struct
 
 #define LGRAYBLUE        0XA651
 #define LBBLUE           0X2B12
-
+//
 static void LCD_WR_DATA(uint16_t data);
 static uint16_t LCD_RD_DATA(void);
 

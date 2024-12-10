@@ -1,7 +1,7 @@
 /*
  * software_timer.c
  *
- *  Created on: Nov 23, 2024
+ *  Created on: Nov 25, 2024
  *      Author: heathcliff
  */
 
@@ -15,12 +15,16 @@ struct {
 	bool state;
 	unsigned int count;
 } timer[NUMBER_OF_TIMER];
-/* timer[0]: to scan 4 7-seg leds
- * timer[1]: to display traffic led
- * timer[2]: to read button
- * timer[3]: to toggle led
- * timer[4]: to increase value by 1 over time
+/* timer[0]: to read button
+ * timer[1]: to blink number
+ * timer[2]: to increase number over time
+ * timer[3]: to auto move snake
  * */
+
+void timer_init(){
+	HAL_TIM_Base_Start_IT(&htim2);
+	HAL_TIM_Base_Start(&htim1);
+}
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	run_timer();
@@ -53,3 +57,16 @@ void run_timer(void) {
 bool is_timer_on(unsigned i) {
 	return (timer[i].state == 1);
 }
+
+
+void timer_EnableDelayUs(){
+	HAL_TIM_Base_Start(&htim1);
+}
+
+void delay_us(uint16_t us)
+{
+	__HAL_TIM_SET_COUNTER(&htim1,0);  // set the counter value a 0
+	while (__HAL_TIM_GET_COUNTER(&htim1) < us);  // wait for the counter to reach the us input in the parameter
+}
+
+

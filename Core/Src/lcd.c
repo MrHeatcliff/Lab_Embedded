@@ -1,8 +1,8 @@
 /*
  * lcd.c
  *
- *  Created on: Nov 23, 2024
- *      Author: heathcliff
+ *  Created on: Sep 25, 2023
+ *      Author: HaHuyen
  */
 
 #include "lcd.h"
@@ -183,6 +183,7 @@ void lcd_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2,uint16
 	lcd_DrawLine(x1,y1,x1,y2,color);
 	lcd_DrawLine(x1,y2,x2,y2,color);
 	lcd_DrawLine(x2,y1,x2,y2,color);
+
 }
 
 void lcd_ShowChar(uint16_t x,uint16_t y,uint8_t character,uint16_t fc,uint16_t bc,uint8_t sizey,uint8_t mode) // 1ky tu size = 12 16 24 32, fc: mau chuw, bc, mauf neefn, mode: hien neen
@@ -478,7 +479,7 @@ void lcd_DrawCircle(int xc, int yc,uint16_t c,int r, int fill) //ve duong or hin
 void lcd_ShowStr(uint16_t x, uint16_t y,char *str,uint16_t fc, uint16_t bc,uint8_t sizey,uint8_t mode)
 {
 	uint16_t x0=x;
-  uint8_t bHz=0;
+    uint8_t bHz=0;
 	while(*str!=0)
 	{
 		if(!bHz)

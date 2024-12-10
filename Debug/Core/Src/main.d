@@ -19,22 +19,32 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/tim.h \
- ../Core/Inc/gpio.h ../Core/Inc/fsmc.h ../Core/Inc/software_timer.h \
- ../Core/Inc/define.h ../Core/Inc/tim.h ../Core/Inc/button.h \
- ../Core/Inc/spi.h ../Core/Inc/gpio.h ../Core/Inc/software_timer.h \
- ../Core/Inc/lcd.h ../Core/Inc/led.h ../Core/Inc/lcd.h ../Core/Inc/fsm.h \
- ../Core/Inc/led.h ../Core/Inc/button.h ../Core/Inc/picture.h
+ ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/i2c.h \
+ ../Core/Inc/spi.h ../Core/Inc/tim.h ../Core/Inc/gpio.h \
+ ../Core/Inc/fsmc.h ../Core/Inc/software_timer.h ../Core/Inc/tim.h \
+ ../Core/Inc/led_7seg.h ../Core/Inc/spi.h ../Core/Inc/button.h \
+ ../Core/Inc/gpio.h ../Core/Inc/lcd.h ../Core/Inc/picture.h \
+ ../Core/Inc/ds3231.h ../Core/Inc/i2c.h ../Core/Inc/utils.h \
+ ../Core/Inc/sensor.h ../Core/Inc/adc.h ../Core/Inc/buzzer.h \
+ ../Core/Inc/touch.h ../Core/Inc/software_timer.h ../Core/Inc/system.h \
+ ../Core/Inc/control.h ../Core/Inc/lcd.h ../Core/Inc/touch.h \
+ ../Core/Inc/display_screen.h ../Core/Inc/control.h \
+ ../Core/Inc/display_screen.h
 
 ../Core/Inc/main.h:
 
@@ -78,6 +88,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
+
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
@@ -87,6 +103,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
@@ -98,9 +118,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
-../Core/Inc/spi.h:
+../Core/Inc/adc.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/dma.h:
+
+../Core/Inc/i2c.h:
+
+../Core/Inc/spi.h:
 
 ../Core/Inc/tim.h:
 
@@ -110,28 +136,46 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/software_timer.h:
 
-../Core/Inc/define.h:
-
 ../Core/Inc/tim.h:
 
-../Core/Inc/button.h:
+../Core/Inc/led_7seg.h:
 
 ../Core/Inc/spi.h:
 
+../Core/Inc/button.h:
+
 ../Core/Inc/gpio.h:
+
+../Core/Inc/lcd.h:
+
+../Core/Inc/picture.h:
+
+../Core/Inc/ds3231.h:
+
+../Core/Inc/i2c.h:
+
+../Core/Inc/utils.h:
+
+../Core/Inc/sensor.h:
+
+../Core/Inc/adc.h:
+
+../Core/Inc/buzzer.h:
+
+../Core/Inc/touch.h:
 
 ../Core/Inc/software_timer.h:
 
+../Core/Inc/system.h:
+
+../Core/Inc/control.h:
+
 ../Core/Inc/lcd.h:
 
-../Core/Inc/led.h:
+../Core/Inc/touch.h:
 
-../Core/Inc/lcd.h:
+../Core/Inc/display_screen.h:
 
-../Core/Inc/fsm.h:
+../Core/Inc/control.h:
 
-../Core/Inc/led.h:
-
-../Core/Inc/button.h:
-
-../Core/Inc/picture.h:
+../Core/Inc/display_screen.h:

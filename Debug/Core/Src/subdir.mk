@@ -5,61 +5,91 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/adc.c \
+../Core/Src/at24c.c \
 ../Core/Src/button.c \
-../Core/Src/fsm.c \
+../Core/Src/buzzer.c \
+../Core/Src/control.c \
+../Core/Src/display_screen.c \
+../Core/Src/dma.c \
+../Core/Src/ds3231.c \
 ../Core/Src/fsmc.c \
 ../Core/Src/gpio.c \
+../Core/Src/i2c.c \
 ../Core/Src/lcd.c \
-../Core/Src/led.c \
 ../Core/Src/led_7seg.c \
 ../Core/Src/main.c \
 ../Core/Src/picture.c \
+../Core/Src/sensor.c \
 ../Core/Src/software_timer.c \
 ../Core/Src/spi.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
+../Core/Src/system.c \
 ../Core/Src/system_stm32f4xx.c \
-../Core/Src/tim.c 
+../Core/Src/tim.c \
+../Core/Src/touch.c \
+../Core/Src/utils.c 
 
 OBJS += \
+./Core/Src/adc.o \
+./Core/Src/at24c.o \
 ./Core/Src/button.o \
-./Core/Src/fsm.o \
+./Core/Src/buzzer.o \
+./Core/Src/control.o \
+./Core/Src/display_screen.o \
+./Core/Src/dma.o \
+./Core/Src/ds3231.o \
 ./Core/Src/fsmc.o \
 ./Core/Src/gpio.o \
+./Core/Src/i2c.o \
 ./Core/Src/lcd.o \
-./Core/Src/led.o \
 ./Core/Src/led_7seg.o \
 ./Core/Src/main.o \
 ./Core/Src/picture.o \
+./Core/Src/sensor.o \
 ./Core/Src/software_timer.o \
 ./Core/Src/spi.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
+./Core/Src/system.o \
 ./Core/Src/system_stm32f4xx.o \
-./Core/Src/tim.o 
+./Core/Src/tim.o \
+./Core/Src/touch.o \
+./Core/Src/utils.o 
 
 C_DEPS += \
+./Core/Src/adc.d \
+./Core/Src/at24c.d \
 ./Core/Src/button.d \
-./Core/Src/fsm.d \
+./Core/Src/buzzer.d \
+./Core/Src/control.d \
+./Core/Src/display_screen.d \
+./Core/Src/dma.d \
+./Core/Src/ds3231.d \
 ./Core/Src/fsmc.d \
 ./Core/Src/gpio.d \
+./Core/Src/i2c.d \
 ./Core/Src/lcd.d \
-./Core/Src/led.d \
 ./Core/Src/led_7seg.d \
 ./Core/Src/main.d \
 ./Core/Src/picture.d \
+./Core/Src/sensor.d \
 ./Core/Src/software_timer.d \
 ./Core/Src/spi.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
+./Core/Src/system.d \
 ./Core/Src/system_stm32f4xx.d \
-./Core/Src/tim.d 
+./Core/Src/tim.d \
+./Core/Src/touch.d \
+./Core/Src/utils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

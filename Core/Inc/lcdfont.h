@@ -1,10 +1,9 @@
 /*
  * lcdfont.h
  *
- *  Created on: Nov 23, 2024
- *      Author: heathcliff
+ *  Created on: Sep 25, 2023
+ *      Author: HaHuyen
  */
-
 
 #ifndef INC_LCDFONT_H_
 #define INC_LCDFONT_H_
